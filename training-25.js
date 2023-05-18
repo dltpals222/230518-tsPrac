@@ -29,7 +29,7 @@ function spacingLetter(text, nounData, spacing){
     if(i === 0){
       result = findText(element,text)
     } else {
-      result = result.slice(0,result.indexOf(element)+element.split("").length+1) + spacing + result.slice(result.indexOf(element)+element.split("").length+1)
+      result = findText(element,result)
     }
   })
   return result
