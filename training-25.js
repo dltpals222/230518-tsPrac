@@ -22,9 +22,12 @@ let spacing = " ";
 
 function spacingLetter(text, nounData, spacing){
   let result = "";
+  let findText = (element, indexText) => {
+    return indexText.slice(0,indexText.indexOf(element)+element.split("").length+1) + spacing + indexText.slice(indexText.indexOf(element)+element.split("").length+1)
+  }
   nounData.map((element,i)=>{
     if(i === 0){
-      result = text.slice(0,text.indexOf(element)+element.split("").length+1) + spacing + text.slice(text.indexOf(element)+element.split("").length+1)
+      result = findText(element,text)
     } else {
       result = result.slice(0,result.indexOf(element)+element.split("").length+1) + spacing + result.slice(result.indexOf(element)+element.split("").length+1)
     }
